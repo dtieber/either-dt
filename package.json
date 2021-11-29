@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "author": "Daniel Tieber <dtieber@gmail.com>",
   "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
