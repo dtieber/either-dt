@@ -4,6 +4,7 @@
   "author": "Daniel Tieber <dtieber@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^16.11.10",
     "typescript": "^4.5.2"
   },
   "scripts": {
