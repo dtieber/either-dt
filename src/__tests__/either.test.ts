@@ -36,6 +36,38 @@ describe('either', () => {
     expect(folded).toEqual(6)
   })
 
+  it('getLeft returns left value if it is a Left', () => {
+    const actual = Either.fromLeft<string, number>('Cannot calculate number')
+
+    const value = actual.getLeft()
+
+    expect(value).toEqual('Cannot calculate number')
+  })
+
+  it('getLeft returns undefined value if it is a Right', () => {
+    const actual = Either.fromRight<string, number>(3)
+
+    const value = actual.getLeft()
+
+    expect(value).toEqual(undefined)
+  })
+
+  it('getRight returns right value if it is a Right', () => {
+    const actual = Either.fromRight<string, number>(3)
+
+    const value = actual.getRight()
+
+    expect(value).toEqual(3)
+  })
+
+  it('getRight returns undefined value if it is a Left', () => {
+    const actual = Either.fromLeft<string, number>('Cannot calculate number')
+
+    const value = actual.getRight()
+
+    expect(value).toEqual(undefined)
+  })
+
   it('isLeft returns true if it is a Left', () => {
     const actual = Either.fromLeft<string, number>('Cannot calculate number')
 

@@ -25,6 +25,14 @@ export class Either<L,R> {
     return fb(this.right!)
   }
 
+  public getLeft(): L | undefined {
+    return this.left
+  }
+
+  public getRight(): R | undefined {
+    return this.right
+  }
+
   public isLeft(): boolean {
     return this.left !== undefined
   }
