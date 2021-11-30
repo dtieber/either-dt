@@ -42,4 +42,11 @@ export class Either<L,R> {
     // eslint-disable-next-line
     return Either.fromRight(f(this.right!))
   }
+
+  public orElse(val: R): R {
+    if(this.right === undefined) {
+      return val
+    }
+    return this.right
+  }
 }

@@ -81,4 +81,20 @@ describe('either', () => {
       right: undefined,
     })
   })
+
+  it('orElse returns right if it is a Right', () => {
+    const actual = Either.fromRight<string, number>(3)
+
+    const value = actual.orElse(9)
+
+    expect(value).toEqual(3)
+  })
+
+  it('orElse returns the given value if it is a Left', () => {
+    const actual = Either.fromLeft<string, number>('Cannot calculate number')
+
+    const value = actual.orElse(9)
+
+    expect(value).toEqual(9)
+  })
 })
