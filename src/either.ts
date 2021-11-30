@@ -15,6 +15,16 @@ export class Either<L,R> {
     return new Either<L,R>(undefined, value)
   }
 
+  public fold<C>(fa: (l: L) => C, fb: (r: R) => C): C {
+    if(this.left !== undefined) {
+      return fa(this.left)
+    }
+
+    // using `!` is not nice, but tsc is not able to detect that it actually cannot be undefined
+    // eslint-disable-next-line
+    return fb(this.right!)
+  }
+
   public isLeft(): boolean {
     return this.left !== undefined
   }

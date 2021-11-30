@@ -20,6 +20,22 @@ describe('either', () => {
     })
   })
 
+  it('applies fa if it is a Left', () => {
+    const actual = Either.fromLeft<string, number>('Cannot calculate number')
+
+    const folded = actual.fold<string>((val) => `Error: ${val}`, (val) => `Success: ${val}`)
+
+    expect(folded).toEqual('Error: Cannot calculate number')
+  })
+
+  it('applies fb if it is a Right', () => {
+    const actual = Either.fromRight<string, number>(3)
+
+    const folded = actual.fold<number>(() => 0, (val) => val * 2)
+
+    expect(folded).toEqual(6)
+  })
+
   it('isLeft returns true if it is a Left', () => {
     const actual = Either.fromLeft<string, number>('Cannot calculate number')
 
