@@ -14,4 +14,12 @@ export class Either<L,R> {
   public static fromRight<L, R>(value: R): Either<L,R> {
     return new Either<L,R>(undefined, value)
   }
+
+  public isLeft(): boolean {
+    return this.left !== undefined
+  }
+
+  public isRight(): boolean {
+    return this.right !== undefined
+  }
 }
