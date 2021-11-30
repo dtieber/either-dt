@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Daniel Tieber <dtieber@gmail.com>",
   "license": "ISC",
+  "main": "./dist/either.js",
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.10",
