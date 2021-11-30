@@ -1,0 +1,13 @@
+{
+  "header": "# Changelog\n\nAll notable changes to this project will be documented in this auto-generated file.\n\n",
+  "releaseCommitMessageFormat": "build: release v{{currentTag}}",
+  "types": [
+    {"type":"feat", "section":":tropical_fish: Features"},
+    {"type":"fix", "section":"Bug Fixes :bug:"},
+    {"type":"refactor", "section": "Refactorings :hammer:"},
+    {"type":"style", "hidden": true},
+    {"type":"test", "hidden": true},
+    {"type":"build", "hidden": true},
+    {"type":"ci", "hidden":true}
+  ]
+}
