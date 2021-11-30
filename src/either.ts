@@ -32,4 +32,14 @@ export class Either<L,R> {
   public isRight(): boolean {
     return this.right !== undefined
   }
+
+  public map<C>(f: (r: R) => C): Either<L,C> {
+    if(this.left !== undefined) {
+      return Either.fromLeft(this.left)
+    }
+
+    // using `!` is not nice, but tsc is not able to detect that it actually cannot be undefined
+    // eslint-disable-next-line
+    return Either.fromRight(f(this.right!))
+  }
 }

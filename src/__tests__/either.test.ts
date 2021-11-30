@@ -59,4 +59,26 @@ describe('either', () => {
 
     expect(actual.isRight()).toBe(false)
   })
+
+  it('map applies a function if it is a Right', () => {
+    const actual = Either.fromRight<string, number>(3)
+
+    const mapped = actual.map<boolean>((val) => !!val)
+
+    expect(mapped).toEqual({
+      left: undefined,
+      right: true,
+    })
+  })
+
+  it('map does not apply the function and returns same left if it is a Left', () => {
+    const actual = Either.fromLeft<string, number>('Cannot calculate number')
+
+    const mapped = actual.map<boolean>((val) => !!val)
+
+    expect(mapped).toEqual({
+      left: 'Cannot calculate number',
+      right: undefined,
+    })
+  })
 })
