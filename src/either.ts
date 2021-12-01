@@ -1,18 +1,12 @@
-export class Either<L,R> {
-  private left: L | undefined
-  private right: R | undefined
+import { asLeft, asRight } from './either-initializers'
 
-  private constructor(left: L | undefined, right: R | undefined) {
+abstract class EitherBase<L,R> {
+  protected readonly left: L | undefined
+  protected readonly right: R | undefined
+
+  protected constructor(left: L | undefined, right: R | undefined) {
     this.left = left
     this.right = right
-  }
-
-  public static fromLeft<L, R>(value: L): Either<L,R> {
-    return new Either<L,R>(value, undefined)
-  }
-
-  public static fromRight<L, R>(value: R): Either<L,R> {
-    return new Either<L,R>(undefined, value)
   }
 
   public fold<C>(fa: (l: L) => C, fb: (r: R) => C): C {
@@ -25,14 +19,6 @@ export class Either<L,R> {
     return fb(this.right!)
   }
 
-  public getLeft(): L | undefined {
-    return this.left
-  }
-
-  public getRight(): R | undefined {
-    return this.right
-  }
-
   public isLeft(): boolean {
     return this.left !== undefined
   }
@@ -43,12 +29,12 @@ export class Either<L,R> {
 
   public map<C>(f: (r: R) => C): Either<L,C> {
     if(this.left !== undefined) {
-      return Either.fromLeft(this.left)
+      return asLeft(this.left)
     }
 
     // using `!` is not nice, but tsc is not able to detect that it actually cannot be undefined
     // eslint-disable-next-line
-    return Either.fromRight(f(this.right!))
+    return asRight(f(this.right!))
   }
 
   public orElse(val: R): R {
@@ -58,3 +44,29 @@ export class Either<L,R> {
     return this.right
   }
 }
+
+export class EitherLeft<L, R> extends EitherBase<L, R> {
+  constructor(left: L) {
+    super(left, undefined)
+  }
+
+  public getLeft(): L {
+    // using `!` is not nice, but tsc is not able to detect that it actually cannot be undefined
+    // eslint-disable-next-line
+    return this.left!
+  }
+}
+
+export class EitherRight<L, R> extends EitherBase<L, R> {
+  constructor(right: R) {
+    super(undefined, right)
+  }
+
+  public getRight(): R {
+    // using `!` is not nice, but tsc is not able to detect that it actually cannot be undefined
+    // eslint-disable-next-line
+    return this.right!
+  }
+}
+
+export type Either<L, R> = EitherLeft<L, R> | EitherRight<L, R>
