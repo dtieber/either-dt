@@ -1,0 +1,7 @@
+src
+.editorconfig
+.eslintignore
+.eslintrc.js
+,versionrc
+jest.config.js
+tsconfig*
