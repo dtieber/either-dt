@@ -4,6 +4,10 @@
   "author": "Daniel Tieber <dtieber@gmail.com>",
   "license": "ISC",
   "main": "./dist/either.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtieber/plain-either.git"
+  },
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.10",
