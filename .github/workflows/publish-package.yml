@@ -32,9 +32,12 @@ jobs:
         run: |
           yarn lint
 
-      - name: Run tests
-        run: |
-          yarn test
+      - name: Run tests and report coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TOKEN }}
+        with:
+          coverageCommand: yarn test:coverage
 
       - name: Publish package
         run: |
