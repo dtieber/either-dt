@@ -1,6 +1,6 @@
 import { asLeft, asRight } from './either-initializers'
 
-abstract class EitherBase<L,R> {
+export abstract class Either<L,R> {
   protected readonly left: L | undefined
   protected readonly right: R | undefined
 
@@ -45,7 +45,7 @@ abstract class EitherBase<L,R> {
   }
 }
 
-export class EitherLeft<L, R> extends EitherBase<L, R> {
+export class EitherLeft<L, R> extends Either<L, R> {
   constructor(left: L) {
     super(left, undefined)
   }
@@ -57,7 +57,7 @@ export class EitherLeft<L, R> extends EitherBase<L, R> {
   }
 }
 
-export class EitherRight<L, R> extends EitherBase<L, R> {
+export class EitherRight<L, R> extends Either<L, R> {
   constructor(right: R) {
     super(undefined, right)
   }
@@ -69,4 +69,3 @@ export class EitherRight<L, R> extends EitherBase<L, R> {
   }
 }
 
-export type Either<L, R> = EitherLeft<L, R> | EitherRight<L, R>
