@@ -1,7 +1,7 @@
-import { EitherLeft, EitherRight } from './either'
+import { EitherRight,Left } from './either'
 
-export function asLeft<L, R>(value: L): EitherLeft<L,R> {
-  return new EitherLeft<L,R>(value)
+export function asLeft<L, R>(value: L): Left<L,R> {
+  return new Left<L,R>(value)
 }
 
 export function asRight<L, R>(value: R): EitherRight<L,R> {

@@ -1,6 +1,6 @@
-import type { Either, EitherLeft, EitherRight } from './either'
+import type { Either, EitherRight,Left } from './either'
 
-export function guardLeft<L,R>(either: Either<L,R>): either is EitherLeft<L,R> {
+export function guardLeft<L,R>(either: Either<L,R>): either is Left<L,R> {
   return either.isLeft()
 }
 

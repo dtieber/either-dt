@@ -45,7 +45,7 @@ export abstract class Either<L,R> {
   }
 }
 
-export class EitherLeft<L, R> extends Either<L, R> {
+export class Left<L, R> extends Either<L, R> {
   constructor(left: L) {
     super(left, undefined)
   }
