@@ -3,8 +3,8 @@
   "releaseCommitMessageFormat": "build: release v{{currentTag}}",
   "types": [
     {"type":"feat", "section":":tropical_fish: Features"},
-    {"type":"fix", "section":"Bug Fixes :bug:"},
-    {"type":"refactor", "section": "Refactorings :hammer:"},
+    {"type":"fix", "section":":bug: Bug Fixes"},
+    {"type":"refactor", "section": ":hammer: Refactorings"},
     {"type":"style", "hidden": true},
     {"type":"test", "hidden": true},
     {"type":"build", "hidden": true},
