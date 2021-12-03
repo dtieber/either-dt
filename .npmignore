@@ -1,5 +1,6 @@
 examples
 src
+coverage
 .editorconfig
 .eslintignore
 .eslintrc.js
