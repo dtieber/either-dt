@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this auto-generated fi
 * return either right value or given value with `getOrElse` ([743f196](https://github.com/dtieber/either-dt/commit/743f19666219de8870ee3945f75e3cdee16708e4))
 
 
-### Refactorings :hammer:
+### :hammer: Refactorings 
 
 * remove union type `Either` and use base class instead ([7f512cd](https://github.com/dtieber/either-dt/commit/7f512cd72fe7d5b53eff49a95cb697bd50e97af1))
 * rename `EitherLeft` to just `Left` ([e435c11](https://github.com/dtieber/either-dt/commit/e435c116fac6d6a177a1a3840e1c2cf1ae291d56))
