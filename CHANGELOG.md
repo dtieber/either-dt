@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this auto-generated file.
 
 
+## 1.1.0 (2021-12-04)
+
+
+### :tropical_fish: Features
+
+* add `divide` example ([d8f05ae](https://github.com/dtieber/plain-either/commit/d8f05ae273ea2dd15dd8a3135741617d7dc5f314))
+
 ## 1.0.0 (2021-12-02)
 
 
