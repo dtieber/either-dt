@@ -8,5 +8,7 @@ coverage
 .github
 .husky
 .versionrc
+cc-*
 jest.config.js
+public-key.asc
 tsconfig*
