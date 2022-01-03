@@ -2,6 +2,7 @@ examples
 src
 coverage
 .editorconfig
+.eslintcache
 .eslintignore
 .eslintrc.js
 ,versionrc
