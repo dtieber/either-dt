@@ -5,6 +5,7 @@ coverage
 .eslintcache
 .eslintignore
 .eslintrc.js
+.github
 ,versionrc
 jest.config.js
 tsconfig*
