@@ -7,6 +7,6 @@ coverage
 .eslintrc.js
 .github
 .husky
-,versionrc
+.versionrc
 jest.config.js
 tsconfig*
