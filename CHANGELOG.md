@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this auto-generated file.
 
 
+## [1.2.0](https://github.com/dtieber/plain-either/compare/v1.1.0...v1.2.0) (2022-01-03)
+
+
+### :tropical_fish: Features
+
+* test ([b489264](https://github.com/dtieber/plain-either/commit/b489264019bbb2aab2f405dcd1b8e69f133bfd37))
+
 ## 1.1.0 (2021-12-04)
 
 
